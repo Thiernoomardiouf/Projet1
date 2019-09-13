@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+   <meta charset = "UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>Créer un compte</title>
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="card">
+    {% if error %}
+    <p class="error"><strong>Erreur : </strong>{{ error }}</p>
+      {% endif %}
+    <h2>Créer un compte</h2>
+
+    <form action="" method="post">
+
+            <input type="text" cols="25" name="prenom" placeholder= "Prénom" maxlength="40" required/><br>
+
+            <input type="text" name="nom" placeholder= "Nom" maxlength="40" required/><br>
+
+            <input type="text" name="e_mail" placeholder= "E-mail" maxlength="40" required/><br>
+
+            <input type="password" name="mot_de_passe" placeholder= "Mot de passee" maxlength="40" required/><br>
+
+        <textarea name="description" placeholder= "Description" maxlength="256" >Description...
+            </textarea>
+
+        <p> Adresse </p>
+
+            <input type="text" name="numero_appartement" placeholder= "Numéro d'appartement" maxlength="5" required/><br>
+
+            <input type="text" name="numero_rue" placeholder= "N* de rue" maxlength="5" required/><br>
+
+            <input type="text" name="nom_rue" placeholder= "Nom de rue" maxlength="50" required/><br>
+
+            <input type="text" name="ville" placeholder= "Ville" maxlength="30" required/><br>
+
+        <select name="province">
+                {% for province in provinces %}
+                    <option value="{{ province }}">{{ province }}</option>
+                {% endfor %}
+            </select> <br><br>
+
+            <input type="text" name="code_postal" placeholder= "Code postal" maxlength="7" required/><br>
+
+        <br>
+            <input type="submit" value="S'enregistrer"><br>
+
+        </form>
+</div>
+</div>
+</body>
+</html>

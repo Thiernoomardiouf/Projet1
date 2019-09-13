@@ -1,0 +1,39 @@
+<!-- Add icon library -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset = "UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/mefs_informations.css') }}">
+<body>
+
+<!-- <center> -->
+
+<div class="wrapper">
+<div class="card">
+    <h6>Mes informations</h6>
+
+
+    <img src='{{ lieu_image }}', width=175)}}" />
+
+    {% for resultat_requete_information_clients in resultat_requete_information_client %}
+  <h2>{{ resultat_requete_information_clients [0] }} {{ resultat_requete_information_clients [1] }}</h2>
+  <p class="title">{{ resultat_requete_information_clients [2] }}</p>
+    <p>{{ resultat_requete_information_clients [9] }}
+  <p>Adresse</p>
+    <p>{{ resultat_requete_information_clients [3] }} - {{ resultat_requete_information_clients [4] }} {{ resultat_requete_information_clients [5] }}</p>
+    <p>{{ resultat_requete_information_clients [6] }}, {{ resultat_requete_information_clients [7] }}</p>
+    <p>{{ resultat_requete_information_clients [8] }}</p>
+
+
+    {% endfor %}
+                    <div>
+                <form method=POST enctype=multipart/form-data action="">
+                <input type=file name=image>
+                <input type="submit" value=Uploader>
+                </form>
+                </div>
+</div>
+</div>
+</body>
+</html>

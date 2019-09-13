@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset = "UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+   <title>Se connecter</title>
+
+</head>
+
+{% if error %}
+    <p class=error><strong>Erreur:</strong> {{ error }}
+  {% endif %}
+
+<div class="wrapper">
+  <form class="login" method="post">
+    <p class="title">Se connecter</p>
+    <hr>
+    <input type="text" placeholder="Email" type="text" name="e_mail" maxlength="40" required autofocus/>
+    <br>
+    <i class="fa fa-user"></i>
+    <input type="password" placeholder="Mot de passe" name="mot_de_passe" maxlength="40" required />
+    <i class="fa fa-key"></i>
+
+    <br>
+<p class="submit">
+ <button type="submit" value="Submit">Connexion</button></p>
+
+<a href="http://127.0.0.1:5000/enregistrer_client"><h5>Créer un compte</h5></a>
+
+  </form>
+  </p>
+</div>
+</html>
